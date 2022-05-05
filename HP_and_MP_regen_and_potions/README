@@ -1,0 +1,13 @@
+Health and Mana manager meant to use regeneration when outside of combat (or if the targets attack is significantly lower).
+Uses positions when in combat and target damage could out DPS the regen skills.
+
+COMPLETED:
+-
+
+TO-DO HIGH PRIORITY:
+- Check HP, MP ratios
+- Gather the amount of damage a monster target can deal
+- use potions or skills
+
+TO-DO LOW PRIORITY:
+- Alerts user in game log if low on potions (can be turned off via parameter)
