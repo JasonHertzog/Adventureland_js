@@ -36,7 +36,7 @@ function check_hp_and_mp(debug = true, focus = "both", hp_thresh = 0.85, mp_thre
             // if count is still less than ratio, increment.
             if(check_hp_mp_count < ratio && focus == "mp"){
                 check_hp_mp_count++;
-                game_log("Iterated mp count: " + check_hp_mp_count);
+                // game_log("Iterated mp count: " + check_hp_mp_count);
             } else {
                 // switch to choice 1, hp.
                 check_hp_mp_choice = 1;
@@ -55,7 +55,7 @@ function check_hp_and_mp(debug = true, focus = "both", hp_thresh = 0.85, mp_thre
             // if count is still less than ratio, increment.
             if(check_hp_mp_count < ratio && focus == "hp"){
                 check_hp_mp_count++;
-                game_log("Iterated hp count: " + check_hp_mp_count);
+                // game_log("Iterated hp count: " + check_hp_mp_count);
                 return;
             } else {
                 // switch to choice 0, mp.
