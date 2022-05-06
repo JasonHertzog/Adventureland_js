@@ -4,7 +4,6 @@ Uses positions when in combat and target damage could out DPS the regen skills.
 COMPLETED:
 [X] Check HP, MP ratios
 [X] Use potions and Skills
-<<<<<<< HEAD
 [X] Custom use potion script
 [X] Alerts user in game log if low on potions
 
@@ -17,14 +16,6 @@ TO-DO LOW PRIORITY:
 CANCELLED:
 - Gather the amount of damage a monster target can deal 
     Why: Seemed irrelevant. If something does enough damage to get health below threshhold, a potion should be used regardless of the monsters ATK.
-=======
-
-TO-DO HIGH PRIORITY:
-- Gather the amount of damage a monster target can deal
-
-TO-DO LOW PRIORITY:
-- Alerts user in game log if low on potions (can be turned off via parameter)
->>>>>>> b3e2ca553372ce1033e3c4d7b584434d382d173a
 
 
 EXAMPLE TO USE
@@ -36,8 +27,4 @@ parameters: debug, focus, hp_thresh, mp_thresh, ratio
          NOTE: "both" ignores ratio
  hp_thresh exmple: with a 1000 max hp, 0.85 = 850 hp left before using a healing potion.
  mp_thresh example: with 100 max mp, 0.2 = 200 mp remaining before using a mana potion.
-<<<<<<< HEAD
  ratio: used to determine how many regens to use before using secondary regen.
-=======
- ratio: used to determine how many regens to use before using secondary regen.
->>>>>>> b3e2ca553372ce1033e3c4d7b584434d382d173a
