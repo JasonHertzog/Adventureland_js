@@ -2,12 +2,29 @@ Health and Mana manager meant to use regeneration when outside of combat (or if 
 Uses positions when in combat and target damage could out DPS the regen skills.
 
 COMPLETED:
--
+[X] Check HP, MP ratios
+[X] Use potions and Skills
+[X] Custom use potion script
+[X] Alerts user in game log if low on potions
 
 TO-DO HIGH PRIORITY:
-- Check HP, MP ratios
-- Gather the amount of damage a monster target can deal
-- use potions or skills
+-
 
 TO-DO LOW PRIORITY:
-- Alerts user in game log if low on potions (can be turned off via parameter)
+- 
+
+CANCELLED:
+- Gather the amount of damage a monster target can deal 
+    Why: Seemed irrelevant. If something does enough damage to get health below threshhold, a potion should be used regardless of the monsters ATK.
+
+
+EXAMPLE TO USE
+check_hp_and_mp("true", "hp", 0.85, 0.2. 3);
+parameters: debug, focus, hp_thresh, mp_thresh, ratio
+
+ debug: true = print messages to game log. false = do not print messages to game log.
+ focus: "hp" = healing is prioritized. "mp" = mana is prioritized. "both" equal priority
+         NOTE: "both" ignores ratio
+ hp_thresh exmple: with a 1000 max hp, 0.85 = 850 hp left before using a healing potion.
+ mp_thresh example: with 100 max mp, 0.2 = 200 mp remaining before using a mana potion.
+ ratio: used to determine how many regens to use before using secondary regen.
