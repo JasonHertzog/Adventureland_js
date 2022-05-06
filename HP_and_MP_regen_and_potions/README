@@ -27,6 +27,4 @@ parameters: debug, focus, hp_thresh, mp_thresh, ratio
          NOTE: "both" ignores ratio
  hp_thresh exmple: with a 1000 max hp, 0.85 = 850 hp left before using a healing potion.
  mp_thresh example: with 100 max mp, 0.2 = 200 mp remaining before using a mana potion.
-
  ratio: used to determine how many regens to use before using secondary regen.
-
