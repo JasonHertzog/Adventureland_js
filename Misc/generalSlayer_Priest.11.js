@@ -31,8 +31,8 @@ setInterval(function(){
 	if(!target)
 	{
 		target=get_nearest_monster({type:monster_choice,max_att:max_atk_choice,min_xp:minxp});
-if(!target && monster_targets >= 2) target=get_nearest_monster({type:secondary_monster,max_attk:max_atk_choice});
-if(!target && monster_targets >= 3) target=get_nearest_monster({type:third_monster,max_attk:max_atk_choice});
+if(!target && monster_targets >= 2) target=get_nearest_monster({type:secondary_monster,max_att:max_atk_choice});
+if(!target && monster_targets >= 3) target=get_nearest_monster({type:third_monster,max_att:max_atk_choice});
 		
 		if(!target && overflow < 90) {
 			target=get_nearest_monster({type:monster_choice,max_att:max_atk_choice});
@@ -47,28 +47,25 @@ if(!target && monster_targets >= 3) target=get_nearest_monster({type:third_monst
 		if(target) change_target(target);
 	}
 	
-	if(!is_in_range(target))
-	{
+	if(!is_in_range(target)) 
+		{
 		move(
 			character.x+(target.x-character.x)/2,
 			character.y+(target.y-character.y)/2
 			);
-		// Walk half the distance
-	}
-	else if(can_attack(target))
-	{
-		set_message("Attacking");
-		attack(target);
-		
-		if(character.x+(target.x-character.x) > 400 || character.y+(target.y-character.y) > 400){
 			timeout++;
 		} else {
 			timeout = 0;
 		}
-		if (timeout > 12){
-			change_target();
+		if (timeout > 15)
+			{
+			change_target(get_nearest_monster({type:secondary_monster,max_att:max_atk_choice}));
 			timeout = 0;
 		}
+	else if(can_attack(target))
+	{
+		set_message("Attacking");
+		attack(target);
 	}
 
 },1000/6); // Loops every 1/6 seconds.
