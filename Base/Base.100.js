@@ -6,3 +6,11 @@ function load_all_code(debug = true){
     // Server Hopping Script
     load_code("Realm_Hopper");
 }
+
+function use_all_loops(debug = true){
+    // Looting happens every tick.
+    loot();
+    // Uses HP & MP Manager every tick.
+    check_hp_and_mp(debug, "both");
+
+}
