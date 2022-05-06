@@ -14,7 +14,7 @@ var secondary_monster = "snake";
 // target 3
 var third_monster = "squig";
 var max_atk_choice = 192;
-var minxp = 0;
+var minxp = 3000;
 
 // Load all code through base
 load_code("base");
@@ -23,7 +23,7 @@ load_all_code();
 
 setInterval(function(){
 	
-	use_all_loops();
+	use_all_loops(false, "mp");
 
 	if(!attack_mode || character.rip || is_moving(character)) return;
 
@@ -31,8 +31,8 @@ setInterval(function(){
 	if(!target)
 	{
 		target=get_nearest_monster({type:monster_choice,max_att:max_atk_choice,min_xp:minxp});
-if(!target && monster_targets >= 2) target=get_nearest_monster({type:secondary_monster,max_att:max_atk_choice});
-if(!target && monster_targets >= 3) target=get_nearest_monster({type:third_monster,max_att:max_atk_choice});
+if(!target && monster_targets >= 2) target=get_nearest_monster({type:secondary_monster,max_att:max_atk_choice,min_xp:minxp});
+if(!target && monster_targets >= 3) target=get_nearest_monster({type:third_monster,max_att:max_atk_choice,min_xp:minxp});
 		
 		if(!target && overflow < 90) {
 			target=get_nearest_monster({type:monster_choice,max_att:max_atk_choice});
@@ -47,7 +47,7 @@ if(!target && monster_targets >= 3) target=get_nearest_monster({type:third_monst
 		if(target) change_target(target);
 	}
 	
-	if(!is_in_range(target)) 
+	else if(!is_in_range(target)) 
 		{
 		move(
 			character.x+(target.x-character.x)/2,
@@ -57,7 +57,7 @@ if(!target && monster_targets >= 3) target=get_nearest_monster({type:third_monst
 		} else {
 			timeout = 0;
 		}
-		if (timeout > 15)
+		if (timeout > 3)
 			{
 			change_target(get_nearest_monster({type:secondary_monster,max_att:max_atk_choice}));
 			timeout = 0;
@@ -68,7 +68,7 @@ if(!target && monster_targets >= 3) target=get_nearest_monster({type:third_monst
 		attack(target);
 	}
 
-},1000/6); // Loops every 1/6 seconds.
+},1000/5); // Loops every 1/5 seconds.
 
 // Learn Javascript: https://www.codecademy.com/learn/introduction-to-javascript
 // Write your own CODE: https://github.com/kaansoral/adventureland
