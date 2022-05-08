@@ -17,4 +17,9 @@ function load_all_code(debug = true){
     load_code("HP_MP_Manager");
     // Server Hopping Script
     load_code("Realm_Hopper");
+    // Trade command script
+    load_code("Trading");
+
+    // Upgrader (for item upgrades) 
+    // load_code("upgrader"); // Not finished
 }
